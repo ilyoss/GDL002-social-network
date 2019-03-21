@@ -32,7 +32,35 @@ Realizamos la encuesta a 25 personas de ambos sexos y de amplio espectro en edad
 
 ## Prototipo de baja fidelidad
 
+Para el diseño del prototipo de baja fidelidad tomamos elementos de diferentes redes sociales como inspiración:
+- Página de registro / login
+  - Para la pantalla inicial, donde el usuario ingresa a la red social o se registra por primera vez, usamos como referencia la página de Facebook web y su formato de ingreso de información.
+- Barra de menú
+  - Tomamos como inspiración el menú de Instagram. Nos gustó su posición en la parte inferior de la app, ya que no obstruye a la vista y no ocupa mucho espacio, sin embargo ofrece una navegación sencilla e intuitiva.
+- Crear publicación
+  - Para esta sección utilizamos también la página de Facebook como inspiración, adecuándola a un formato móvil sencillo para nosotros pero eficiente e intuitivo.
+- Acerca de nosotros
+  - Esta página contiene una breve descripción del proyecto, de cómo surgió la idea y tres citas dónde usuarios de nuestras encuestas nos respondieron la pregunta: "En tus propias palabras ¿qué significa para ti ser vegano o vegetariano y pertenecer a esta comunidad?"
+- Mi perfil
+  - En esta sección lo que se va a mostrar es la información básica con la que el usuario se registró: nombre, correo electrónico y el estilo de vida con el que se identifica más (vegetariano o vegano).
+
+Después de esta lluvia de ideas y referencias, obtuvimos el siguiente resultado.
+
+![](images/prototipoBaja.jpg)
+
+
 ## Prototipo de alta fidelidad
+
+Para generar el prototipo de alta fidelidad buscamos primero establecer una paleta de color que tuviera colores frescos y vivos. Revisamos varias páginas relacionadas a recetas de cocina veganas/vegetarianas y que tuvieran tips de alimentación, y nos dimos cuenta que la mayoría maneja un diseño muy sencillo de fondo blanco, letras negras, pero con acentos de colores que ayudan a que se vea bonito sin estar muy cargado.
+
+Después de una votación en equipo nos decidimos por esta paleta de colores:
+
+![](images/palette.jpg)
+> Codigos de color: #69D5B5, #A7EEA8, #FED058, #FF8D7A y #BFDBDC.
+
+Y teniendo esto como base procedimos a mezclar el diseño de nuestro prototipo de baja fidelidad con los acentos de colores, para obtener el siguiente resultado:
+
+![]()
 
 ## Conclusiones de pruebas con el producto en HTML
 
@@ -48,8 +76,8 @@ Realizamos la encuesta a 25 personas de ambos sexos y de amplio espectro en edad
 
 ### `README.md`
 
-* [ ] Definición del producto
-* [ ] Resumen de entrevistas con usuarios.
+* [x] Definición del producto
+* [x] Resumen de entrevistas con usuarios.
 * [ ] Link/screenshots prototipo de baja fidelidad.
 * [ ] Conclusiones de pruebas con el producto en HTML.
 
