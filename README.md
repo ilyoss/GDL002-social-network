@@ -1,4 +1,6 @@
-# Creando una Red Social - Veggie-Happy
+# Creando una Red Social
+
+![](images/logojpg.jpg)
 #### Proyecto por Susy, Sofy e Ily
 
 ## Definición del producto
