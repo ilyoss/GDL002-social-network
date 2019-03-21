@@ -20,17 +20,14 @@ Realizamos la encuesta a 25 personas de ambos sexos y de amplio espectro en edad
 >#### Pregunta 1
 >
 >![](images/pregunta1.png)
->
 >La mayoría de los usuarios encuestados se identifican como vegetarianos, por lo que decidimos que la red social sea para gente vegana y vegetariana.
 >
 >#### Pregunta 2
 >![](images/pregunta2.png)
->
 >Nos dimos cuenta también que la mayoría de los encuestados no forman parte actualmente de una comunidad con los mismos intereses o mismo estilo de vida, por lo que vimos un área de oportunidad para crear con nuestro proyecto una comunidad.
 >
 >#### Pregunta 3
 >![](images/pregunta3.png)
->
 >Por último, llegamos a la conclusión de que a la mayoría de los usuarios les interesa obtener información relacionada con comida, como tips de cocina, recetas, recomendación de restaurantes e incluso poder conocer gente profesionista del medio, como nutriólogos, para poder asesorarse en este ámbito de mejor manera.
 
 ## Prototipo de baja fidelidad
