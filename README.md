@@ -62,7 +62,11 @@ Después de una votación en equipo nos decidimos por esta paleta de colores:
 
 Y teniendo esto como base procedimos a mezclar el diseño de nuestro prototipo de baja fidelidad con los acentos de colores, para obtener el siguiente resultado:
 
-![]()
+![](images/prototipoAlta.png)
+>Pantalla de inicio de sesion y registro; newsfeed; perfil del usuario; acerca de nosotros.
+
+https://www.figma.com/file/DGwknuSiCURLQc58FenJxr/VeggieHappy
+
 
 ## Conclusiones de pruebas con el producto en HTML
 
