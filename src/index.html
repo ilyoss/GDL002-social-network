@@ -10,7 +10,7 @@
   </head>
   <body>
 
-    <section class="login">
+    <section id="login" class="section">
       <!-- I place my background image in a separate div, so I can edit its opacity
       without affecting the rest of the elements-->
       <div class="bgImage" style="background-image: url(../images/verde.jpg);"></div>
@@ -23,10 +23,10 @@
           <!--Sign in form data-->
           <form class="signIn">
             <!--Input elements for both email and password-->
-            <h2 class="label">E-mail</h2><input class="input" type="text" name="email" autofocus>
-            <h2 class="label">Password</h2><input class="input" type="password" name="password">
+            <h2 class="label">E-mail</h2><input class="input" type="email" id="loginEmail" autofocus>
+            <h2 class="label">Password</h2><input class="input" type="password" id="loginPassword">
             <!--Login button-->
-            <button class="button" type="button" name="login">Sign in</button>
+            <button class="button" type="button" id="signIn">Sign in</button>
             <!-- Link for when the user forgets its password -->
             <a class="forgotPassword" href="#">Forgot your password?</a>
 
@@ -40,13 +40,13 @@
           <!--Sign in form data-->
           <form class="register">
             <!--Input elements for both email and password-->
-            <h2 class="label">Name</h2><input class="input" type="text" name="name" autofocus>
-            <h2 class="label">Last name</h2><input class="input" type="text" name="lastname">
-            <h2 class="label">City</h2><input class="input" type="text" name="city">
-            <h2 class="label">Email</h2><input class="input" type="text" name="email">
-            <h2 class="label">Password</h2><input class="input" type="password" name="password">
+            <h2 class="label">Name</h2><input class="input" type="text" id="name" autofocus>
+            <h2 class="label">Last name</h2><input class="input" type="text" id="lastname">
+            <h2 class="label">City</h2><input class="input" type="text" id="city">
+            <h2 class="label">Email</h2><input class="input" type="text" id="email">
+            <h2 class="label">Password</h2><input class="input" type="password" id="password">
             <!--Login button-->
-            <button class="button" type="button" name="signup">Sign up!</button>
+            <button class="button" type="button" id="signUpBtn">Sign up!</button>
 
             <p class="text">Already have an account? <a class="signUp" href="javascript:flip();">Sign in!</a></p>
           </form>
@@ -55,7 +55,14 @@
       </div>
 
     </section>
+
+    <section id="newsfeed" class="section" style="display: 'none';">
+      <button type="button" id="logOut">Log Out</button>
+    </section>
+
+
     <!--First pure function scripts and then DOM, for good practice-->
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
