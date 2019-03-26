@@ -23,7 +23,7 @@ body {
 }
 
 .logo {
-  width: 80vw;
+  width: 30vw;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1rem;
@@ -31,17 +31,15 @@ body {
 }
 
 .loginContent, .registerContent {
-  position: absolute;
+  position: relative;
   display: block;
-  top: 0;
-  left: 0;
-  width: 85vw;
-  height: 80vh;
+  width: 70vw;
+  height: 90vh;
   background:rgba(255,255,255,0.95);
   border-radius: 2rem;
-  margin-top: 5rem;
-  margin-left: 27px;
-  margin-right: 27px;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -50,7 +48,7 @@ body {
 }
 
 .registerContent {
-  margin-top: 1rem;
+  top: -95vh;
   height: 95vh;
   -webkit-transform: rotateY( 180deg );
   -moz-transform: rotateY( 180deg );
@@ -86,33 +84,30 @@ body {
 .signIn, .register {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
-  margin: 0 auto;
+  margin: auto;
   display: table;
-}
-
-.title {
-  font-family: 'Proza Libre', sans-serif;
-  font-size: 2rem;
 }
 
 .label {
   text-align: center;
   font-family: inherit;
   display: block;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin: 0;
 }
 
 .input {
+  width: 20vw;
   text-align: center;
   font-family: inherit;
   display: block;
-  font-size: 1rem;
+  font-size: 0.9rem;
   background-color: #A7EEA8;
   border-radius: 1rem;
-  margin: 0.5rem;
-  padding-top: 0.2rem;
-  padding-bottom: 0.2rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5rem;
+  padding: 0.1rem;
 }
 
 .button {
@@ -120,6 +115,7 @@ body {
   font-size: 1rem;
   border-radius: 1rem;
   margin: 0.2rem;
+  margin-top: 1rem;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
   padding-left: 1rem;
@@ -145,7 +141,7 @@ body {
   text-decoration: none;
   color: #69D5B5;
   margin-top: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .text {
@@ -157,8 +153,93 @@ body {
 .signUp {
   color: #69D5B5;
   text-decoration: none;
-  display: block;
+  display: inline-block;
   font-family: inherit;
   font-size: 1rem;
-  margin-bottom: 3rem;
+}
+
+/* Media for Galaxy S5 phone */
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 768px) {
+  .logo {
+    width: 80vw;
+    margin-bottom: 1rem;
+  }
+
+  .loginContent, .registerContent {
+    width: 85vw;
+    height: 80vh;
+    background:rgba(255,255,255,0.95);
+    margin-top: 5rem;
+    margin-left: 27px;
+    margin-right: 27px;
+  }
+
+  .registerContent {
+    margin-top: 2rem;
+    height: 95vh;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+
+  .input {
+    width: 50vw;
+    text-align: center;
+    font-family: inherit;
+    display: block;
+    font-size: 0.9rem;
+    background-color: #A7EEA8;
+    border-radius: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    padding: 0.1rem;
+  }
+
+  .button {
+    font-size: 1rem;
+    border-radius: 1rem;
+    margin: 0.2rem;
+    margin-top: 1rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius: 1rem;
+  }
+
+  .forgotPassword {
+    display: block;
+    font-family: inherit;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #69D5B5;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .text {
+    display: block;
+    font-family: inherit;
+    font-size: 1rem;
+    margin: 0;
+    margin-top: 1rem;
+  }
+
+  .signUp {
+    color: #69D5B5;
+    text-decoration: none;
+    display: block;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+
 }
