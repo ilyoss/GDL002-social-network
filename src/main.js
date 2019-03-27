@@ -1,5 +1,3 @@
-//DOM VARIABLES, so I can use them across my functions
-
                       //BUTTONS
 //All buttons
 const signInBtn = document.getElementById("signIn"); //Sign in!
@@ -18,17 +16,10 @@ const registerEmail = document.getElementById('email');
 const registerPassword = document.getElementById('password');
 const cardElement = document.getElementById("card");
 
-                      //SCREENS
-const loginScreen = document.getElementById("login"); //Log in screen
-const logoutScreen = document.getElementById("newsfeed"); //Log in screen
-
-logoutScreen.style.display = 'none';
-
-
                       //EVENT LISTENERS
+signInBtn.addEventListener("click", login);
 signUpBtn.addEventListener("click", register);
-logOut.addEventListener("click", logout);
-
+// logOut.addEventListener("click", logout);
 
                       //FUNCTIONS
 
@@ -41,10 +32,10 @@ function flip() {
 //Function in which I login the user, as long as the user and password exists in the data base
 function login() {
 
-  let loginEmail = loginEmail.value;
-  let loginPassword = loginPassword.value;
+  let email = loginEmail.value;
+  let password = loginPassword.value;
 
-  firebase.auth().signInWithEmailAndPassword(loginEmail, loginPassword).catch(function(error) {
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -52,24 +43,22 @@ function login() {
     // ...
   });
 
-  window.alert("Working!");
+  onNavItemClick('/newsfeed')
 }
 
 function register(){
 
   let userEmail = registerEmail.value;
   let userPassword = registerPassword.value;
-
   //Firebase function to create a new user in the registration area, with email and password
   firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).catch(function failure(error) {
           var errorCode = error.code;
           var errorMessage = error.message;
-          console.log(errorCode + " " + errorMessage);
-
+          alert(errorCode + "- Oh no, something went wrong :( " + errorMessage);
       });
       //After the user is created I check that the user is signed in
       firebase.auth().onAuthStateChanged(function(user) {
-        //If my new user is logged in (which is true, because after registration logs in automatically)
+        //If my new user is logged in (which is true, because after registration it logs in automatically)
         if (user) {
           //I save the uid in a variable
           let uid = user.uid;
@@ -84,6 +73,8 @@ function register(){
           // ...
         }
       });
+
+      onNavItemClick('/newsfeed')
 }
 
 //Escribir en la base de datos
