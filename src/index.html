@@ -23,10 +23,7 @@
   </head>
   <body>
 
-    <section class="login">
-      <!-- I place my background image in a separate div, so I can edit its opacity
-      without affecting the rest of the elements-->
-      <div class="bgImage" style="background-image: url(../images/verde.jpg);"></div>
+    <div id="content" class="content"></div>
 
       <div class="card" id="card">
         <!-- Div with all my content: logo, form and buttons -->
@@ -69,6 +66,8 @@
 
     </section>
     <!--First pure function scripts and then DOM, for good practice-->
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="index.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>

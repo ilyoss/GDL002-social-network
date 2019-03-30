@@ -1,3 +1,17 @@
+initFirebase();
+
+function initFirebase(){
+  // Initialize Firebase
+  let config = {
+    apiKey: "AIzaSyC69KcGgAiDrajAsi-Fbi2tjvrRMHzH9So",
+    authDomain: "veggiehappy-c15fa.firebaseapp.com",
+    databaseURL: "https://veggiehappy-c15fa.firebaseio.com",
+    projectId: "veggiehappy-c15fa",
+    storageBucket: "veggiehappy-c15fa.appspot.com",
+    messagingSenderId: "982911036256"
+  };
+  firebase.initializeApp(config);
+}
 /**
  * Inserts a new user into firebase database
  * @param {*} firstName The first name of the user
@@ -21,7 +35,7 @@ let provider = new firebase.auth.GoogleAuthProvider();
 function registerWithGoogle (provider){
 firebase.auth().signInWithPopup(provider).then (function (result){
 console.log(result.user);
-});   
+});
 }
 
   function updateUser(userId, name, lastName, email, password, city) {
