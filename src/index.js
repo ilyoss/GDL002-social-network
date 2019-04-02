@@ -5,7 +5,7 @@ let routes = {
   '/': './templates/login.html',
   '/newsfeed': './templates/newsfeed.html',
   '/profile': './templates/profile.html',
-  '/about': './templates/aboutus.html',
+  '/aboutus': './templates/aboutus.html',
 };
 //
 window.onpopstate = () => {
@@ -43,10 +43,21 @@ function addEventListeners(){
   const btnList = document.querySelectorAll(".jsBtn");
 
   for (let i = 0; i < btnList.length; i++) {
-     btnList[i].addEventListener("click", function(event) {
-       // console.dir(event.target);
-       // console.dir(event.target.attributes.dataFirst.value);
-       socialNetwork[event.target.dataset.next](document.getElementById(event.target.attributes.dataFirst.value).value, document.getElementById(event.target.attributes.dataSecond.value).value);
-     });
+    //Button action for login/register page
+    if(window.location.pathname == "/"){
+      //Variable to make the flip-card work
+      let card = document.getElementById("card");
+      btnList[i].addEventListener("click", function(event) {
+        socialNetwork[event.target.dataset.next](document.getElementById(event.target.attributes.dataFirst.value).value,
+        document.getElementById(event.target.attributes.dataSecond.value).value);
+      });
+    }
+    //Button action for the logout page
+    else if(window.location.pathname == "/newsfeed"){
+      btnList[i].addEventListener("click", function(event) {
+        socialNetwork[event.target.dataset.next]();
+      });
+    }
+
   }
 }
