@@ -3,7 +3,7 @@ const socialNetwork = {
   login: login,
   register: register,
   logout: logout,
-  publish: publish,
+  // publish: publish,
 };
 //Function to flip "card", alternate between login or register visual
 function flip() {
@@ -74,24 +74,24 @@ function saveData(uid, email, password){
 }
 
 //Function to save data from new post
-function writeNewPost(uid, username, picture, title, body) {
-  // A post entry.
-  let postData = {
-    author: username,
-    uid: uid,
-    body: body,
-    title: title,
-    starCount: 0,
-    authorPic: picture
-  };
-
-  // Get a key for a new Post.
-  let newPostKey = firebase.database().ref("users/" + uid + "/").child('posts').push().key;
-
-  // Write the new post's data simultaneously in the posts list and the user's post list.
-  let updates = {};
-  updates['/posts/' + newPostKey] = postData;
-  updates['/user-posts/' + uid + '/' + newPostKey] = postData;
-
-  return firebase.database().ref().update(updates);
-}
+// function writeNewPost(uid, username, picture, title, body) {
+//   // A post entry.
+//   let postData = {
+//     author: username,
+//     uid: uid,
+//     body: body,
+//     title: title,
+//     starCount: 0,
+//     authorPic: picture
+//   };
+//
+//   // Get a key for a new Post.
+//   let newPostKey = firebase.database().ref("users/" + uid + "/").child('posts').push().key;
+//
+//   // Write the new post's data simultaneously in the posts list and the user's post list.
+//   let updates = {};
+//   updates['/posts/' + newPostKey] = postData;
+//   updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+//
+//   return firebase.database().ref().update(updates);
+// }

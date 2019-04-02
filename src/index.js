@@ -53,11 +53,10 @@ function addEventListeners(){
       });
     }
     //Button action for the logout page
-    else if(window.location.pathname == "/newsfeed"){
+    else{
       btnList[i].addEventListener("click", function(event) {
         socialNetwork[event.target.dataset.next]();
       });
     }
-
   }
 }
