@@ -1,28 +1,42 @@
+let cardElement; 
+let registerName;
+let registerLast;
+let registerCity;
+let registerEmail;
+let registerPassword;
+let loginEmail;
+let loginPassword;
+let signInBtn;
+let signUpBtn;
+let logOutBtn;
+
                       //BUTTONS
-//All buttons
-const signInBtn = document.getElementById("signIn"); //Sign in!
-const signUpBtn = document.getElementById("signUpBtn"); //Sign up
-const logOutBtn = document.getElementById("logOut"); //Log Out
+window.onload = function () {
+  console.log("onload");
+  //All buttons
+  signInBtn = document.getElementById("signIn"); //Sign in!
+  signUpBtn = document.getElementById("signUpBtn"); //Sign up
+  logOutBtn = document.getElementById("logOut"); //Log Out
 
-                      //INPUTS
-//Login form
-const loginEmail = document.getElementById('loginEmail');
-const loginPassword = document.getElementById('loginPassword');
-//Registration form
-const registerName = document.getElementById('name');
-const registerLast = document.getElementById('lastname');
-const registerCity = document.getElementById('city');
-const registerEmail = document.getElementById('email');
-const registerPassword = document.getElementById('password');
-const cardElement = document.getElementById("card");
+                        //INPUTS
+  //Login form
+  loginEmail = document.getElementById('loginEmail');
+  loginPassword = document.getElementById('loginPassword');
+  //Registration form
+  registerName = document.getElementById('name');
+  registerLast = document.getElementById('lastname');
+  registerCity = document.getElementById('city');
+  registerEmail = document.getElementById('email');
+  registerPassword = document.getElementById('password');
+  cardElement = document.getElementById("card");
 
-                      //EVENT LISTENERS
-signInBtn.addEventListener("click", login);
-signUpBtn.addEventListener("click", register);
-// logOut.addEventListener("click", logout);
+                        //EVENT LISTENERS
+  signInBtn.addEventListener("click", login);
+  signUpBtn.addEventListener("click", register);
 
+  // logOut.addEventListener("click", logout);
+}
                       //FUNCTIONS
-
 //Function to flip "card", alternate between login or register visual
 function flip() {
   //I toggle the class of the element to flipped
@@ -36,7 +50,8 @@ function login() {
   let password = loginPassword.value;
 
   firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-    // Handle Errors here.
+    console.log("user id: " + firebase.auth().currentUser.uid);
+    // // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
     alert("Something went wrong :( " + errorMessage);
@@ -142,7 +157,6 @@ function signUp() {
   registerNewUser(name, lastName, email, password, city);
 
 }
-document.getElementById("signup").addEventListener("click", signUp);
 
 function editUserDetails() {
   let name = document.querySelector("#name").value;
@@ -158,3 +172,4 @@ function signGoogle() {
 registerWithGoogle (provider);
 
 }
+

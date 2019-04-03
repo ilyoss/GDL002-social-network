@@ -2,18 +2,6 @@
 <html lang="en" dir="ltr">
   <head>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyC4NiScEbvtJv0vmtcKcjxn4vQZ3e9BHbc",
-          authDomain: "socialmedialaboratoria.firebaseapp.com",
-          databaseURL: "https://socialmedialaboratoria.firebaseio.com",
-          projectId: "socialmedialaboratoria",
-          storageBucket: "socialmedialaboratoria.appspot.com",
-          messagingSenderId: "88997748834"
-        };
-        firebase.initializeApp(config);
-    </script>
     <meta charset="utf-8">
     <title>VeggieHappy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,46 +13,6 @@
 
     <div id="content" class="content"></div>
 
-      <div class="card" id="card">
-        <!-- Div with all my content: logo, form and buttons -->
-        <div class="loginContent">
-          <!--Logo image at the top, first element on my section-->
-          <img class="logo" src="../images/logo.png" alt="veggieHappyLogo">
-          <!--Sign in form data-->
-          <form class="signIn">
-            <!--Input elements for both email and password-->
-            <h2 class="label">E-mail</h2><input class="input" type="text" id="signInEmail" autofocus>
-            <h2 class="label">Password</h2><input class="input" type="password" id="signInPassword">
-            <!--Login button-->
-            <button class="button" type="button" name="login" onclick="signIn()">Sign in</button>
-            <!-- Link for when the user forgets its password -->
-            <a class="forgotPassword" href="#">Forgot your password?</a>
-
-            <p class="text">Don't have an account yet? <a class="signUp" id="signUp" href="javascript:flip();">Sign up!</a></p>
-          </form>
-        </div>
-
-        <div class="registerContent">
-          <!--Logo image at the top, first element on my section-->
-          <img class="logo" src="../images/logo.png" alt="veggieHappyLogo">
-          <!--Sign in form data-->
-          <form class="register">
-            <!--Input elements for both email and password-->
-            <h2 class="label">Name</h2><input class="input" type="text" id="name" autofocus>
-            <h2 class="label">Last name</h2><input class="input" type="text" id="lastName">
-            <h2 class="label">City</h2><input class="input" type="text" id="city">
-            <h2 class="label">Email</h2><input class="input" type="text" id="email">
-            <h2 class="label">Password</h2><input class="input" type="password" id="password">
-            <!--Login button-->
-            <button class="button"type="button" id="signup">  Sign up!</button>
-            <button class="button"type="button" name="registerWithGoogle" onclick= "signGoogle()">  Google!</button>
-            <p class="text">Already have an account? <a class="signUp" href="javascript:flip();">Sign in!</a></p>
-          </form>
-        </div>
-
-      </div>
-
-    </section>
     <!--First pure function scripts and then DOM, for good practice-->
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
     <script src="index.js"></script>

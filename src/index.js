@@ -2,9 +2,9 @@
 let contentDiv = document.getElementById('content');
 //I set up my routes for the webpage, and assign them my htmls
 let routes = {
-  '/': './templates/login.html',
-  '/index.html': './templates/login.html',
-  '/newsfeed': './templates/newsfeed.html',
+  '/src/': './templates/login.html',
+  '/src/index.html': './templates/login.html',
+  '/src/newsfeed': './templates/newsfeed.html',
 };
 //
 window.onpopstate = () => {
@@ -34,3 +34,50 @@ const fetchContent = (url) => fetch(url)
 
 fetchContent(routes[window.location.pathname])
 .then(html => contentDiv.innerHTML = html);
+
+
+/*function createUser() {
+    let firstName = document.getElementById("firstName").value;
+    let lastName = document.getElementById("lastName").value;
+    let city = document.getElementById("city").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    insertUser(firstName, lastName, city, email, password);
+}
+
+function addPost() {
+  let userId = "K1fOYzBObY7jJcr9sy0S";
+  let message = document.getElementById("message").value;
+  insertPost(userId, message);
+}
+
+function insertUser(firstName, lastName, city, email, password) {
+  // Add a new document with a generated id.
+  db.collection("users").add({
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      city: city,
+      password: password
+  })
+  .then(function(docRef) {
+      console.log("User added with ID: ", docRef.id);
+  })
+  .catch(function(error) {
+      console.error("Error adding document: ", error);
+  });
+}
+
+function insertPost(userId, message) {
+
+  db.collection("users").doc(userId).collection('posts').add({
+    message: message
+  }).then(function(docRef) {
+      console.log("post added with ID: ", docRef.id);
+  })
+  .catch(function(error) {
+      console.error("Error adding document: ", error);
+  });
+}
+*/

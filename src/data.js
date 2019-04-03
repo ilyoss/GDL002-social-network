@@ -2,13 +2,13 @@ initFirebase();
 
 function initFirebase(){
   // Initialize Firebase
-  let config = {
-    apiKey: "AIzaSyC69KcGgAiDrajAsi-Fbi2tjvrRMHzH9So",
-    authDomain: "veggiehappy-c15fa.firebaseapp.com",
-    databaseURL: "https://veggiehappy-c15fa.firebaseio.com",
-    projectId: "veggiehappy-c15fa",
-    storageBucket: "veggiehappy-c15fa.appspot.com",
-    messagingSenderId: "982911036256"
+  let  config = {
+    apiKey: "AIzaSyC4NiScEbvtJv0vmtcKcjxn4vQZ3e9BHbc",
+    authDomain: "socialmedialaboratoria.firebaseapp.com",
+    databaseURL: "https://socialmedialaboratoria.firebaseio.com",
+    projectId: "socialmedialaboratoria",
+    storageBucket: "socialmedialaboratoria.appspot.com",
+    messagingSenderId: "88997748834"
   };
   firebase.initializeApp(config);
 }
@@ -27,7 +27,17 @@ function registerNewUser(name, lastName, email, password, city) {
       lastName: lastName,
       email : email,
       password : password,
-      city : city
+      city : city,
+      posts: [
+        {
+          post: "Mensaje de pruebas de post",
+          date: "03/29/2019"
+        },
+        {
+          post: "Mensaje de pruebas de post 2",
+          date: "03/29/2019"
+        },
+      ]
     });
     console.log("inserting into firebase complete");
   }
