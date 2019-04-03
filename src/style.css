@@ -9,6 +9,7 @@ body {
 footer {
   position: absolute;
   bottom: 0;
+  width: 100%;
 }
 
 .section {
@@ -31,7 +32,7 @@ footer {
 
 .newsfeedBg {
   background-size: cover;
-  width: 100vw;
+  width: 100%;
   -webkit-mask-image:-webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
   mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
 }
@@ -196,9 +197,10 @@ footer {
 
 .postContent {
   outline: 0;
-  width: inherit;
+  padding: 0;
+  height: 10vh;
+  width: 85vw;
   border-radius: 2px 2px 0 0;
-  padding: 18px 12px 14px 12px;
 }
 
 .publish {

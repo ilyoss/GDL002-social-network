@@ -2,9 +2,16 @@
 let contentDiv = document.getElementById('content');
 //I set up my routes for the webpage, and assign them my htmls
 let routes = {
+<<<<<<< HEAD
   '/src/': './templates/login.html',
   '/src/index.html': './templates/login.html',
   '/src/newsfeed': './templates/newsfeed.html',
+=======
+  '/': './templates/login.html',
+  '/newsfeed': './templates/newsfeed.html',
+  '/profile': './templates/profile.html',
+  '/aboutus': './templates/aboutus.html',
+>>>>>>> e3db3cd8b31b06c517e556099b774b1513b453d1
 };
 //
 window.onpopstate = () => {
@@ -16,7 +23,8 @@ let onNavItemClick = (pathName) => {
   window.history.pushState({}, pathName, window.location.origin + pathName);
   //I fetch my html content and send it to the innerHTML
   fetchContent(routes[window.location.pathname])
-  .then(html => contentDiv.innerHTML = html);
+  .then(html => contentDiv.innerHTML = html)
+  .then(() => addEventListeners());
 }
 //My fetchContent function, which gets the data in my htmls and translates it to text, which I then can use
 const fetchContent = (url) => fetch(url)
@@ -33,6 +41,7 @@ const fetchContent = (url) => fetch(url)
     });
 
 fetchContent(routes[window.location.pathname])
+<<<<<<< HEAD
 .then(html => contentDiv.innerHTML = html);
 
 
@@ -81,3 +90,30 @@ function insertPost(userId, message) {
   });
 }
 */
+=======
+.then(html => contentDiv.innerHTML = html)
+.then(() => addEventListeners());
+
+//Function to add event listeners after loading my template
+function addEventListeners(){
+  const btnList = document.querySelectorAll(".jsBtn");
+
+  for (let i = 0; i < btnList.length; i++) {
+    //Button action for login/register page
+    if(window.location.pathname == "/"){
+      //Variable to make the flip-card work
+      let card = document.getElementById("card");
+      btnList[i].addEventListener("click", function(event) {
+        socialNetwork[event.target.dataset.next](document.getElementById(event.target.attributes.dataFirst.value).value,
+        document.getElementById(event.target.attributes.dataSecond.value).value);
+      });
+    }
+    //Button action for the logout page
+    else{
+      btnList[i].addEventListener("click", function(event) {
+        socialNetwork[event.target.dataset.next]();
+      });
+    }
+  }
+}
+>>>>>>> e3db3cd8b31b06c517e556099b774b1513b453d1
