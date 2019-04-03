@@ -2,10 +2,16 @@
 let contentDiv = document.getElementById('content');
 //I set up my routes for the webpage, and assign them my htmls
 let routes = {
+<<<<<<< HEAD
+  '/src/': './templates/login.html',
+  '/src/index.html': './templates/login.html',
+  '/src/newsfeed': './templates/newsfeed.html',
+=======
   '/': './templates/login.html',
   '/newsfeed': './templates/newsfeed.html',
   '/profile': './templates/profile.html',
   '/aboutus': './templates/aboutus.html',
+>>>>>>> e3db3cd8b31b06c517e556099b774b1513b453d1
 };
 //
 window.onpopstate = () => {
@@ -35,6 +41,56 @@ const fetchContent = (url) => fetch(url)
     });
 
 fetchContent(routes[window.location.pathname])
+<<<<<<< HEAD
+.then(html => contentDiv.innerHTML = html);
+
+
+/*function createUser() {
+    let firstName = document.getElementById("firstName").value;
+    let lastName = document.getElementById("lastName").value;
+    let city = document.getElementById("city").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    insertUser(firstName, lastName, city, email, password);
+}
+
+function addPost() {
+  let userId = "K1fOYzBObY7jJcr9sy0S";
+  let message = document.getElementById("message").value;
+  insertPost(userId, message);
+}
+
+function insertUser(firstName, lastName, city, email, password) {
+  // Add a new document with a generated id.
+  db.collection("users").add({
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      city: city,
+      password: password
+  })
+  .then(function(docRef) {
+      console.log("User added with ID: ", docRef.id);
+  })
+  .catch(function(error) {
+      console.error("Error adding document: ", error);
+  });
+}
+
+function insertPost(userId, message) {
+
+  db.collection("users").doc(userId).collection('posts').add({
+    message: message
+  }).then(function(docRef) {
+      console.log("post added with ID: ", docRef.id);
+  })
+  .catch(function(error) {
+      console.error("Error adding document: ", error);
+  });
+}
+*/
+=======
 .then(html => contentDiv.innerHTML = html)
 .then(() => addEventListeners());
 
@@ -60,3 +116,4 @@ function addEventListeners(){
     }
   }
 }
+>>>>>>> e3db3cd8b31b06c517e556099b774b1513b453d1
