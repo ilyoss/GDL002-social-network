@@ -3,7 +3,7 @@ const socialNetwork = {
   login: login,
   register: register,
   logout: logout,
-  // publish: publish,
+  publish: publish,
 };
 //Function to flip "card", alternate between login or register visual
 function flip() {
@@ -71,4 +71,30 @@ function saveData(uid, email, password){
   }
   //Dentro de mi rama de usuarios, guardo el usuario con su uid
   firebase.database().ref("users/" + uid).set(user);
+}
+
+function publish() {
+  const uid = firebase.auth().currentUser.uid;
+  const textpost = document.getElementById("postContent").value;
+
+  writeNewPost(uid, textpost);
+}
+
+//Function to create new post
+function writeNewPost(uid, textpost) {
+  // A post entry.
+  var postData = {
+    body: textpost,
+    starCount: 0,
+  };
+
+  // Get a key for a new Post.
+  var newPostKey = firebase.database().ref().child('posts').push().key;
+
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+  // updates['/posts/' + newPostKey] = postData;
+  updates['/users/' + uid + '/posts/' + newPostKey] = postData;
+
+  return firebase.database().ref().update(updates);
 }
