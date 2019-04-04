@@ -13,8 +13,8 @@ footer {
 }
 
 .section {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   text-align: center;
   -webkit-perspective: 800px;
   -moz-perspective: 800px;
@@ -227,6 +227,82 @@ footer {
   font-weight:300;
   text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
   transition: all 0.2s;
+}
+
+.aboutUs {
+  height: 100vh;
+  width: 100vw;
+}
+
+.aboutUsContent {
+  position: relative;
+  display: block;
+  width: 80vw;
+  height: 85vh;
+  background:rgba(255,255,255,0.95);
+  border-radius: 2rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  top: -100vh;
+}
+
+.aboutUsContent h2{
+  font-size: 1rem;
+}
+
+.aboutUsContent .text{
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.quote{
+  font-size: 0.8rem;
+  background-color: #A7EEA8;
+  margin: 1rem;
+  padding: 0.8rem;
+  border-radius: 1rem;
+}
+
+/* Place the navbar at the bottom of the page, and make it stick */
+.navbar {
+  border-top: 1px solid #ddd;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background-color: #fafafa;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  width: 20%;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+i {
+  color: #404040;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+  background-color: #69D5B5;
+}
+
+/* Add a color to the active/current link */
+.navbar a.active {
+  background-color: #69D5B5;
 }
 
 /* Media for Galaxy S5 phone */
