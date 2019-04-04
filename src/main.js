@@ -93,7 +93,9 @@ function writeNewPost(uid, textpost) {
 
   // Write the new post's data simultaneously in the posts list and the user's post list.
   var updates = {};
-  // updates['/posts/' + newPostKey] = postData;
+  //Pushing the posts to a common place, so we can build our newsfeed
+  updates['/posts/' + newPostKey] = postData;
+  //Saving the posts directly under the current user
   updates['/users/' + uid + '/posts/' + newPostKey] = postData;
 
   return firebase.database().ref().update(updates);
