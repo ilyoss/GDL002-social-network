@@ -43,18 +43,18 @@ function addEventListeners(){
   const btnList = document.querySelectorAll(".jsBtn");
 
   for (let i = 0; i < btnList.length; i++) {
-    //Button action for login/register page
+    //Variable to make the flip-card work
+    let card = document.getElementById("card");
     if(window.location.pathname == "/"){
-      //Variable to make the flip-card work
-      let card = document.getElementById("card");
       btnList[i].addEventListener("click", function(event) {
-        socialNetwork[event.target.dataset.next](document.getElementById(event.target.attributes.dataFirst.value).value,
-        document.getElementById(event.target.attributes.dataSecond.value).value);
+        event.preventDefault();
+        socialNetwork[event.target.dataset.next](document.getElementById(event.target.dataset.mail).value,
+        document.getElementById(event.target.dataset.password).value);
       });
     }
-    //Button action for the logout page
     else{
       btnList[i].addEventListener("click", function(event) {
+        event.preventDefault();
         socialNetwork[event.target.dataset.next]();
       });
     }

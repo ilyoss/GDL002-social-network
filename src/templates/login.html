@@ -14,7 +14,7 @@
         <h2 class="label">E-mail</h2><input class="input" type="email" id="loginEmail" autofocus>
         <h2 class="label">Password</h2><input class="input" type="password" id="loginPassword">
         <!--Login button-->
-        <button class="button jsBtn" data-next="login" dataFirst="loginEmail" dataSecond="loginPassword" type="button" id="signIn">Sign in</button>
+        <button class="button jsBtn" data-next="login" data-mail="loginEmail" data-password="loginPassword" type="button" id="signIn">Sign in</button>
         <!-- Link for when the user forgets its password -->
         <a class="forgotPassword" href="#">Forgot your password?</a>
 
@@ -31,10 +31,10 @@
         <h2 class="label">Name</h2><input class="input" type="text" id="name" autofocus>
         <h2 class="label">Last name</h2><input class="input" type="text" id="lastName">
         <h2 class="label">City</h2><input class="input" type="text" id="city">
-        <h2 class="label">Email</h2><input class="input" type="text" id="email">
-        <h2 class="label">Password</h2><input class="input" type="password" id="password">
+        <h2 class="label">Email</h2><input class="input" type="text" id="registerEmail">
+        <h2 class="label">Password</h2><input class="input" type="password" id="registerPassword">
         <!--Login button-->
-        <button class="button jsBtn" data-next="register" dataFirst="email" dataSecond="password" type="button" id="signUpBtn">Sign up!</button>
+        <button class="button jsBtn" data-next="register" data-mail="registerEmail" data-password="registerPassword" datatype="button" id="registerBtn">Sign up!</button>
 
         <p class="text">Already have an account? <a class="signUp" href="javascript:flip();">Sign in!</a></p>
       </form>
