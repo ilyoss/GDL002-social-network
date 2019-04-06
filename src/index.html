@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
+    <!-- approach from http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/ -->
+    <script>
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
     <!--Div where I will push my content from my html templates-->
     <div id="content" class="content"></div>
 
