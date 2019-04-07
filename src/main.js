@@ -47,6 +47,7 @@ function register(email, password){
       //I call my save data function and send the uid
       saveData(uid, email, password);
       onNavItemClick('/newsfeed');
+      printPosts();
     }
   });
 }
@@ -86,22 +87,29 @@ function publish() {
 //Function to create new post
 function writeNewPost(uid, textpost) {
   // A post entry.
-  var postData = {
-    body: textpost,
-    starCount: 0,
-  };
 
-  // Get a key for a new Post.
-  var newPostKey = firebase.database().ref().child('posts').push().key;
+  firebase.database().ref('/users/' + uid).once('value')
+  .then(function(snapshot) {
+    //Saving the name of the username, so we can save it in general posts as well
+    let username = (snapshot.val().nombre + " " + snapshot.val().apellido);
+    //Setting the data object
+    let postData = {
+      usuario: username,
+      body: textpost,
+      starCount: 0,
+    };
+    // Get a key for a new Post.
+    var newPostKey = firebase.database().ref().child('posts').push().key;
 
-  // Write the new post's data simultaneously in the posts list and the user's post list.
-  var updates = {};
-  //Pushing the posts to a common place, so we can build our newsfeed
-  updates['/posts/' + newPostKey] = postData;
-  //Saving the posts directly under the current user
-  updates['/users/' + uid + '/posts/' + newPostKey] = postData;
+    // Write the new post's data simultaneously in the posts list and the user's post list.
+    var updates = {};
+    //Pushing the posts to a common place, so we can build our newsfeed
+    updates['/posts/' + newPostKey] = postData;
+    //Saving the posts directly under the current user
+    updates['/users/' + uid + '/posts/' + newPostKey] = postData;
 
-  return firebase.database().ref().update(updates);
+    return firebase.database().ref().update(updates);
+  });
 }
 
 function printPosts(){
@@ -111,6 +119,7 @@ function printPosts(){
   //Getting general posts list
   firebase.database().ref('/posts').on('value', function(snapshot) {
     let array = snapshotToArray(snapshot);
+    array.reverse();
 
     print(array);
 
@@ -124,6 +133,7 @@ function printPosts(){
   function postTemplate(post){
     return `
     <div class="post">
+      <h2 class="createPostTitle">${post.usuario}</h2>
       <textarea class="postContent" name="name" rows="6" cols="40" id="postContent">${post.body}</textarea>
     </div>
     `;
