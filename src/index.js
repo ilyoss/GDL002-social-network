@@ -45,6 +45,7 @@ function addEventListeners(){
   for (let i = 0; i < btnList.length; i++) {
     //Variable to make the flip-card work
     let card = document.getElementById("card");
+    
     if(window.location.pathname == "/"){
       btnList[i].addEventListener("click", function(event) {
         event.preventDefault();

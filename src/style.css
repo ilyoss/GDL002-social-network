@@ -176,9 +176,10 @@ footer {
 .createPost {
   position: relative;
   text-align: center;
-  height: 25vh;
+  height: 20vh;
   width: 85vw;
   margin: 2rem;
+  margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
   background-color: #E4ECEC;
@@ -214,7 +215,6 @@ footer {
   font-size: 0.8rem;
   border-radius: 2px 2px 0 0;
   margin: 0.2rem;
-  margin-top: 1rem;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
   padding-left: 1rem;
@@ -303,6 +303,11 @@ i {
 /* Add a color to the active/current link */
 .navbar a.active {
   background-color: #69D5B5;
+}
+
+.allPosts {
+  height: 45vh;
+  overflow: scroll;
 }
 
 /* Media for Galaxy S5 phone */

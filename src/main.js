@@ -17,6 +17,9 @@ function login(email, password) {
   .then(() =>
     onNavItemClick('/newsfeed')
   )
+  .then(() =>
+    printPosts()
+  )
   .catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
@@ -99,4 +102,58 @@ function writeNewPost(uid, textpost) {
   updates['/users/' + uid + '/posts/' + newPostKey] = postData;
 
   return firebase.database().ref().update(updates);
+}
+
+function printPosts(){
+
+  //Grab current user
+  const user = firebase.auth().currentUser.uid;
+  //Getting general posts list
+  firebase.database().ref('/posts').on('value', function(snapshot) {
+    let array = snapshotToArray(snapshot);
+
+    print(array);
+
+    function print(array){
+      document.getElementById("allPosts").innerHTML = `
+      ${array.map(postTemplate).join("")}`;
+    }
+
+  });
+
+  function postTemplate(post){
+    return `
+    <div class="post">
+      <textarea class="postContent" name="name" rows="6" cols="40" id="postContent">${post.body}</textarea>
+    </div>
+    `;
+  }
+
+  function snapshotToArray(snapshot) {
+      var returnArr = [];
+
+      snapshot.forEach(function(childSnapshot) {
+          var item = childSnapshot.val();
+          item.key = childSnapshot.key;
+
+          returnArr.push(item);
+      });
+      return returnArr;
+  };
+}
+
+function printProfile() {
+  let uid = firebase.auth().currentUser.uid;
+
+  firebase.database().ref('/users/' + uid).once('value').then(function(snapshot) {
+    //Saving the user's data in variables before printing
+    let name = snapshot.val().nombre + " " + snapshot.val().apellido;
+    let ciudad = snapshot.val().ciudad;
+    let email = snapshot.val().email;
+    //Printing in DOM the profile
+    document.getElementById("profileName").innerHTML = name;
+    document.getElementById("profileCiudad").innerHTML = ciudad;
+    document.getElementById("profileEmail").innerHTML = email;
+  // ...
+  });
 }
