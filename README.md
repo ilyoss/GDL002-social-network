@@ -84,8 +84,8 @@ https://www.figma.com/file/DGwknuSiCURLQc58FenJxr/VeggieHappy
 
 * [x] Definición del producto
 * [x] Resumen de entrevistas con usuarios.
-* [ ] Link/screenshots prototipo de baja fidelidad.
-* [ ] Conclusiones de pruebas con el producto en HTML.
+* [x] Link/screenshots prototipo de baja fidelidad.
+* [x] Conclusiones de pruebas con el producto en HTML.
 
 ### Pruebas / tests
 
@@ -95,22 +95,22 @@ https://www.figma.com/file/DGwknuSiCURLQc58FenJxr/VeggieHappy
 
 ### Creación de cuenta (sign up)
 
-* [ ] Permite crear cuenta.
-* [ ] Valida email.
-* [ ] Valida password.
-* [ ] Muestra mensajes de error.
+* [x] Permite crear cuenta.
+* [x] Valida email.
+* [x] Valida password.
+* [x] Muestra mensajes de error.
 
 ### Inicio de sesión (sign in)
 
-* [ ] Permite iniciar sesión.
-* [ ] Valida email.
-* [ ] Valida password.
-* [ ] Muestra mensajes de error.
+* [x] Permite iniciar sesión.
+* [x] Valida email.
+* [x] Valida password.
+* [x] Muestra mensajes de error.
 
 ### Muro (wall/feed)
 
-* [ ] Muestra _muro_, o lista de publicaciones.
-* [ ] Permite hacer nuevas publicaciones.
+* [x] Muestra _muro_, o lista de publicaciones.
+* [x] Permite hacer nuevas publicaciones.
 * [ ] Permite eliminar publicaciones.
 * [ ] Pide confirmación antes de borrar publicación.
 * [ ] Permite editar publicación en el mismo lugar (in place).
