@@ -1,0 +1,409 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.section {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+}
+
+.bgImage {
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  opacity: 0.7;
+}
+
+.newsfeedBg {
+  background-size: cover;
+  width: 100%;
+  -webkit-mask-image:-webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.logo {
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.loginContent, .registerContent {
+  position: relative;
+  display: block;
+  width: 70vw;
+  height: 90vh;
+  background:rgba(255,255,255,0.95);
+  border-radius: 2rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.registerContent {
+  top: -95vh;
+  height: 95vh;
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+.card {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+}
+
+.card.flipped {
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+.signIn, .register {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin: auto;
+  display: table;
+}
+
+.label {
+  text-align: center;
+  font-family: inherit;
+  display: block;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.input {
+  width: 20vw;
+  text-align: center;
+  font-family: inherit;
+  display: block;
+  font-size: 0.9rem;
+  background-color: #A7EEA8;
+  border-radius: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5rem;
+  padding: 0.1rem;
+}
+
+.button {
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 1rem;
+  margin: 0.2rem;
+  margin-top: 1rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #FF8D7A;
+  border:0.16em solid rgba(255,255,255,0);
+  border-radius: 1rem;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-weight:300;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  transition: all 0.2s;
+}
+
+.button:hover {
+  border-color: #FED058;
+}
+
+.forgotPassword {
+  display: block;
+  font-family: inherit;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #69D5B5;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.text {
+  display: block;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.signUp {
+  color: #69D5B5;
+  text-decoration: none;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.createPost {
+  position: relative;
+  text-align: center;
+  height: 20vh;
+  width: 85vw;
+  margin: 2rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #E4ECEC;
+  border-radius: 2px 2px 0 0;
+}
+
+.createPostTitle {
+  text-align: left;
+  padding: 0.3rem;
+  padding-left: 0.5rem;
+  font-size: 0.8rem;
+  margin: 0;
+  border-bottom: 2px solid #69D5B5;
+  font-weight: bold;
+}
+
+.postContent {
+  outline: 0;
+  padding: 0;
+  height: 10vh;
+  width: 85vw;
+  border-radius: 2px 2px 0 0;
+}
+
+.publish {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.postButton {
+  font-family: inherit;
+  font-size: 0.8rem;
+  border-radius: 2px 2px 0 0;
+  margin: 0.2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #FF8D7A;
+  border:0.16em solid rgba(255,255,255,0);
+  border-radius: 1rem;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-weight:300;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  transition: all 0.2s;
+}
+
+.aboutUs {
+  height: 100vh;
+  width: 100vw;
+}
+
+.aboutUsContent {
+  position: relative;
+  display: block;
+  width: 80vw;
+  height: 85vh;
+  background:rgba(255,255,255,0.95);
+  border-radius: 2rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  top: -100vh;
+}
+
+.aboutUsContent h2{
+  font-size: 1rem;
+}
+
+.aboutUsContent .text{
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.quote{
+  font-size: 0.8rem;
+  background-color: #A7EEA8;
+  margin: 1rem;
+  padding: 0.8rem;
+  border-radius: 1rem;
+}
+
+/* Place the navbar at the bottom of the page, and make it stick */
+.navbar {
+  border-top: 1px solid #ddd;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background-color: #fafafa;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  width: 20%;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+i {
+  color: #404040;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+  background-color: #69D5B5;
+}
+
+/* Add a color to the active/current link */
+.navbar a.active {
+  background-color: #69D5B5;
+}
+
+.allPosts {
+  height: 45vh;
+  overflow: scroll;
+}
+
+.post {
+  position: relative;
+  text-align: center;
+  height: 15vh;
+  width: 85vw;
+  margin: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fafafa;
+  border-radius: 2px 2px 0 0;
+}
+
+/* Media for Galaxy S5 phone */
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 768px) {
+  .logo {
+    width: 80vw;
+    margin-bottom: 1rem;
+  }
+
+  .loginContent, .registerContent {
+    width: 85vw;
+    height: 80vh;
+    background:rgba(255,255,255,0.95);
+    margin-top: 5rem;
+    margin-left: 27px;
+    margin-right: 27px;
+  }
+
+  .registerContent {
+    margin-top: 2rem;
+    height: 95vh;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+
+  .input {
+    width: 50vw;
+    text-align: center;
+    font-family: inherit;
+    display: block;
+    font-size: 0.9rem;
+    background-color: #A7EEA8;
+    border-radius: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    padding: 0.1rem;
+  }
+
+  .button {
+    font-size: 1rem;
+    border-radius: 1rem;
+    margin: 0.2rem;
+    margin-top: 1rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius: 1rem;
+  }
+
+  .forgotPassword {
+    display: block;
+    font-family: inherit;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #69D5B5;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .text {
+    display: block;
+    font-family: inherit;
+    font-size: 1rem;
+    margin: 0;
+    margin-top: 1rem;
+  }
+
+  .signUp {
+    color: #69D5B5;
+    text-decoration: none;
+    display: block;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+
+}
